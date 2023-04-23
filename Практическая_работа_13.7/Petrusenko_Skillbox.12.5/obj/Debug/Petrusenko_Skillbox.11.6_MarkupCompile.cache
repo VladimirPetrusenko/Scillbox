@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\ООП\Scillbox\Практическая работа_13.7\Petrusenko_Skillbox.12.5\obj\Debug\
+D:\ООП\Scillbox\SkillboxRepositoryPetrusenko\Практическая_работа_13.7\Petrusenko_Skillbox.12.5\obj\Debug\
 Petrusenko_Skillbox._11._6
 none
 false
 DEBUG;TRACE
-D:\ООП\Scillbox\Практическая работа_13.7\Petrusenko_Skillbox.12.5\App.xaml
-13-531788390
+D:\ООП\Scillbox\SkillboxRepositoryPetrusenko\Практическая_работа_13.7\Petrusenko_Skillbox.12.5\App.xaml
+13-559985519
 
-24443921865
-30-853679192
-AccountBankConsultant.xaml;AccountBankManager.xaml;AddMoneyAccount.xaml;EditAccountBankManager.xaml;EditClientListConsultant.xaml;EditClientListManager.xaml;ExternalFinanceTransaction.xaml;InnerFinanceTransaction.xaml;ListClientsConsultant.xaml;ListClientsManager.xaml;MainWindow.xaml;OpenNewAccount.xaml;SelectFromTheListClients.xaml;
+24-1029762388
+30726155065
+AccountBankConsultant\AccountBankConsultant.xaml;AccountBankManager\AccountBankManager.xaml;AddMoneyAccount\AddMoneyAccount.xaml;EditAccountBankManager\EditAccountBankManager.xaml;EditClientListConsultant\EditClientListConsultant.xaml;EditClientListManager\EditClientListManager.xaml;ExternalFinanceTransaction\ExternalFinanceTransaction.xaml;InnerFinanceTransaction\InnerFinanceTransaction.xaml;ListClientsConsultant\ListClientsConsultant.xaml;ListClientsManager\ListClientsManager.xaml;MainWindow.xaml;OpenNewAccount\OpenNewAccount.xaml;SelectFromTheListClients\SelectFromTheListClients.xaml;
 
 False
 

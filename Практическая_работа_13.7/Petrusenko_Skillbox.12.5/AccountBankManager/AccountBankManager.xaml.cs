@@ -73,7 +73,6 @@ namespace Petrusenko_Skillbox._11._6
         // Редактирование информации о счете
         public void EditAccountsList(DataGrid dataGrid)
         {
-            
             if (dataGrid.SelectedCells.Count != 0)
             {
                 int index = dataGrid.SelectedIndex;
