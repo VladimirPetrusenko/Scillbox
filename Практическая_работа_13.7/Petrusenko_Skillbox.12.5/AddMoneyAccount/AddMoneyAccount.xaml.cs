@@ -28,7 +28,6 @@ namespace Petrusenko_Skillbox._11._6
             get { return money; }
         }
 
-        private double fee = 0;
         public string Record = string.Empty;
         public bool IsRecord = false;
 
