@@ -1,0 +1,37 @@
+﻿<Window x:Class="Petrusenko_Skillbox._11._6.AddMoneyAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Petrusenko_Skillbox._11._6"
+        mc:Ignorable="d"
+        Title="AddMoneyAccount" Height="500" Width="800">
+    <Grid>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="98,45,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="98,78,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="98,111,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label Content="Отчество" HorizontalAlignment="Left" Margin="98,144,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label Content="Капитализация" HorizontalAlignment="Left" Margin="98,177,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label Content="Сумма на счете" HorizontalAlignment="Left" Margin="98,210,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label Content="Ставка по вкладу, %" HorizontalAlignment="Left" Margin="98,243,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label Content="Итоговая сумма на счете" HorizontalAlignment="Left" Margin="98,276,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label Content="Тип счета" HorizontalAlignment="Left" Margin="98,309,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+
+        <Label x:Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="392,45,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label x:Name="Label2" Content="Label" HorizontalAlignment="Left" Margin="392,78,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label x:Name="Label3" Content="Label" HorizontalAlignment="Left" Margin="392,111,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label x:Name="Label4" Content="Label" HorizontalAlignment="Left" Margin="392,144,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label x:Name="Label5" Content="Label" HorizontalAlignment="Left" Margin="392,177,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label x:Name="Label6" Content="Label" HorizontalAlignment="Left" Margin="392,210,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label x:Name="Label7" Content="Label" HorizontalAlignment="Left" Margin="392,243,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label x:Name="Label8" Content="Label" HorizontalAlignment="Left" Margin="392,276,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label x:Name="Label9" Content="Label" HorizontalAlignment="Left" Margin="392,309,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <Label Content="Сумма пополнения" HorizontalAlignment="Left" Margin="98,342,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="25" Padding="0"/>
+        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="23" Margin="389,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="16" PreviewTextInput = "TextInputEvent"/>
+        <Label Content="Комиссия:" Margin="523,341,178.6,0" VerticalAlignment="Top" FontSize="16" Height="25" Padding="0"/>
+        <Label Content="Пополнение счета" HorizontalAlignment="Left" Margin="313,10,0,0" VerticalAlignment="Top" Width="145" FontSize="16" Height="25" Padding="0"/>
+        <Button Content="Пополнить" HorizontalAlignment="Left" Margin="277,408,0,0" VerticalAlignment="Top" Width="126" Height="29" Click="Button_Click_1"/>
+        <Button Content="Ок" HorizontalAlignment="Left" Margin="408,408,0,0" VerticalAlignment="Top" Width="126" Height="29" Click="Button_Click"/>
+        <Label x:Name="Label10" Content="Label" HorizontalAlignment="Left" Margin="620,341,0,0" VerticalAlignment="Top" Width="145" FontSize="16" Height="25" Padding="0"/>
+    </Grid>
+</Window>

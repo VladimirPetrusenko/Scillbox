@@ -1,0 +1,19 @@
+﻿<Window x:Class="Petrusenko_Skillbox._11._6.AccountBankManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Petrusenko_Skillbox._11._6"
+        mc:Ignorable="d"
+        Title="AccountBankManager" Height="450" Width="889.6">
+    <Grid HorizontalAlignment="Left" Width="880">
+        <DataGrid x:Name="DG4" HorizontalAlignment="Left" Height="344" Margin="10,66,0,0" VerticalAlignment="Top" Width="865"/>
+        <Label Content="Список счетов клиентов. Режим Менеджер." HorizontalAlignment="Left" Margin="199,0,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Button Content="Редактировать" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="Button_Click"/>
+        <Button Content="Транзакции внутренние" HorizontalAlignment="Left" Margin="155,36,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="Button_Click_1"/>
+        <Button Content="Закрыть" HorizontalAlignment="Left" Margin="445,36,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="Button_Click_5"/>
+        <Button Content="Открыть" HorizontalAlignment="Left" Margin="590,36,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="Button_Click_2"/>
+        <Button Content="Пополнить" HorizontalAlignment="Left" Margin="735,36,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="Button_Click_3"/>
+        <Button Content="Транзакции внешние" HorizontalAlignment="Left" Margin="300,36,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="Button_Click_4"/>
+    </Grid>
+</Window>
