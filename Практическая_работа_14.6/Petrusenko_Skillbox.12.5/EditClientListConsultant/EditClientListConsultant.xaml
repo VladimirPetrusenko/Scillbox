@@ -1,0 +1,15 @@
+﻿<Window x:Class="Petrusenko_Skillbox._11._6.EditClientListConsultant"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Petrusenko_Skillbox._11._6"
+        mc:Ignorable="d"
+        Title="EditClientListConsultant" Height="450" Width="800">
+    <Grid>
+        <Label Content="Редактирование данных о выбранном клиенте" HorizontalAlignment="Left" Margin="175,23,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="30" Margin="175,83,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="190" FontSize="16"/>
+        <Label Content="Редактировать номер телефона" HorizontalAlignment="Left" Margin="370,81,0,0" VerticalAlignment="Top" Width="246" Height="30" FontSize="16"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="305,141,0,0" VerticalAlignment="Top" Width="170" Height="30" FontSize="16" Click="Button_Click_1"/>
+    </Grid>
+</Window>
