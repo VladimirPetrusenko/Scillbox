@@ -1,0 +1,11 @@
+D:\ООП\Scillbox\Практическая работа_15.11\Petrusenko_Skillbox.15.11\obj\Debug\netcoreapp3.1\Petrusenko_Skillbox.15.11.csprojAssemblyReference.cache
+D:\ООП\Scillbox\Практическая работа_15.11\Petrusenko_Skillbox.15.11\obj\Debug\netcoreapp3.1\Petrusenko_Skillbox.15.11.AssemblyInfoInputs.cache
+D:\ООП\Scillbox\Практическая работа_15.11\Petrusenko_Skillbox.15.11\obj\Debug\netcoreapp3.1\Petrusenko_Skillbox.15.11.AssemblyInfo.cs
+D:\ООП\Scillbox\Практическая работа_15.11\Petrusenko_Skillbox.15.11\bin\Debug\netcoreapp3.1\Petrusenko_Skillbox.15.11.exe
+D:\ООП\Scillbox\Практическая работа_15.11\Petrusenko_Skillbox.15.11\bin\Debug\netcoreapp3.1\Petrusenko_Skillbox.15.11.deps.json
+D:\ООП\Scillbox\Практическая работа_15.11\Petrusenko_Skillbox.15.11\bin\Debug\netcoreapp3.1\Petrusenko_Skillbox.15.11.runtimeconfig.json
+D:\ООП\Scillbox\Практическая работа_15.11\Petrusenko_Skillbox.15.11\bin\Debug\netcoreapp3.1\Petrusenko_Skillbox.15.11.runtimeconfig.dev.json
+D:\ООП\Scillbox\Практическая работа_15.11\Petrusenko_Skillbox.15.11\bin\Debug\netcoreapp3.1\Petrusenko_Skillbox.15.11.dll
+D:\ООП\Scillbox\Практическая работа_15.11\Petrusenko_Skillbox.15.11\bin\Debug\netcoreapp3.1\Petrusenko_Skillbox.15.11.pdb
+D:\ООП\Scillbox\Практическая работа_15.11\Petrusenko_Skillbox.15.11\obj\Debug\netcoreapp3.1\Petrusenko_Skillbox.15.11.dll
+D:\ООП\Scillbox\Практическая работа_15.11\Petrusenko_Skillbox.15.11\obj\Debug\netcoreapp3.1\Petrusenko_Skillbox.15.11.pdb
