@@ -31,8 +31,8 @@ namespace DesktopAppStore
                 InitialCatalog = "DBClients",
                 IntegratedSecurity = false,
                 Pooling = true,
-                UserID = "ss",
-                Password = "tt"
+                UserID = "ConnectNameStore",
+                Password = "store1236547890"
             };
 
             dt = new DataTable();
