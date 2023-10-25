@@ -1,0 +1,16 @@
+﻿<Window x:Class="DesktopAppStore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopAppStore"
+        mc:Ignorable="d"
+        Title="DesktopStore.StartWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Настольное приложение для сотрудников магазина" HorizontalAlignment="Left" Margin="90,50,0,0" VerticalAlignment="Top" Width="610" Height="50" FontSize="25"/>
+        <Label Content="   Позволяет сотрудникам магазина осуществлять операции &#xA;добавления, удаления и редактирования данных по клиентам &#xA;                                  и совершенным заказам" 
+               Margin="95,95,98.6,0" Width="610" Height="108" FontSize="20" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Left"/>
+        <Button Content="Информация по клиентам" HorizontalAlignment="Left" Margin="236,210,0,0" VerticalAlignment="Top" Width="336" Height="62" Click="Button_Click_1" FontSize="20"/>
+        <Button Content="Информация по заказам" HorizontalAlignment="Left" Margin="236,290,0,0" VerticalAlignment="Top" Width="336" Height="62" Click="Button_Click_2" FontSize="20"/>
+    </Grid>
+</Window>

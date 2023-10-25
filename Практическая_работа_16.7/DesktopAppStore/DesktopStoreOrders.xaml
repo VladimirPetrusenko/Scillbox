@@ -1,0 +1,48 @@
+﻿<Window x:Class="DesktopAppStore.DesktopStoreOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopAppStore"
+        mc:Ignorable="d"
+        Title="DesktopStoreOrders" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="30*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="gridView"
+                  IsSynchronizedWithCurrentItem="True"
+                  SelectionMode="Single"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding}"
+                  IsReadOnly="False">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="id"
+                                    Binding="{Binding ID}"
+                                    Header="Id"
+                                    IsReadOnly="True"/>
+
+                <DataGridTextColumn x:Name="email"
+                                    Binding="{Binding Email}"
+                                    Header="Email"/>
+
+                <DataGridTextColumn x:Name="productcode"
+                                    Binding="{Binding Код_товара}"
+                                    Header="Код товара"/>
+
+                <DataGridTextColumn x:Name="nameproduct"
+                                    Binding="{Binding Наименование_товара}"
+                                    Header="Наименование товара"/>
+
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Добавить" Click="MenuItemAddClick"/>
+                    <MenuItem Header="Удалить" Click="MenuItemDeleteClick"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+    </Grid>
+</Window>
