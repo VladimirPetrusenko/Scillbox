@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище DBClientsModelContainer" CdmEntityContainer="DBClientsEntities">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="DBClientsModel.Clients">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+          <ScalarProperty Name="Номер_телефона" ColumnName="Номер_телефона" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

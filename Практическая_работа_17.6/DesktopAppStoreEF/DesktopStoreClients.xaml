@@ -1,0 +1,59 @@
+﻿<Window x:Class="DesktopAppStoreEF.DesktopStoreClients"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopAppStoreEF"
+        mc:Ignorable="d"
+        Title="DesktopStoreClients" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="30*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="viewClients"
+                  IsSynchronizedWithCurrentItem="True"
+                  SelectionMode="Single"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding}"
+                  IsReadOnly="False">
+                  <!--CurrentCellChanged="GridViewCurrentCellChanged"-->
+                  <!--CellEditEnding="GridViewCellEditEnding"-->
+
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="id"
+                                    Binding="{Binding ID}"
+                                    Header="Id"
+                                    IsReadOnly="True"/>
+
+                <DataGridTextColumn x:Name="surname"
+                                    Binding="{Binding Фамилия}"
+                                    Header="Фамилия"/>
+
+                <DataGridTextColumn x:Name="name"
+                                    Binding="{Binding Имя}"
+                                    Header="Имя"/>
+
+                <DataGridTextColumn x:Name="patronymic"
+                                    Binding="{Binding Отчество}"
+                                    Header="Отчество"/>
+
+                <DataGridTextColumn x:Name="numberphone"
+                                    Binding="{Binding Номер_телефона}"
+                                    Header="Номер телефона"/>
+
+                <DataGridTextColumn x:Name="email"
+                                    Binding="{Binding Email}"
+                                    Header="Email"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Добавить" Click="MenuItemAddClick"/>
+                    <MenuItem Header="Редактировать" Click="MenuItemEditClick"/>
+                    <MenuItem Header="Удалить" Click="MenuItemDeleteClick"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+        <Button Content="Сделанные заказы" Grid.Column="1" HorizontalAlignment="Left" Margin="20,24,0,0" VerticalAlignment="Top" Width="200" Height="30" Click="Button_Click"/>
+    </Grid>
+</Window>

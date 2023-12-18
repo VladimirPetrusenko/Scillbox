@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище DBOrdersModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "DBOrders.dbo.Orders" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Код_товара" />
+      <PropertyRef Name="Наименование_товара" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Код_товара" Type="int" Nullable="false" />
+    <Property Name="Наименование_товара" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Хранилище DBOrdersModelContainer">
+    <EntitySet Name="Orders" EntityType="Self.Orders" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Orders].[ID] AS [ID], 
+    [Orders].[Email] AS [Email], 
+    [Orders].[Код_товара] AS [Код_товара], 
+    [Orders].[Наименование_товара] AS [Наименование_товара]
+    FROM [dbo].[Orders] AS [Orders]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

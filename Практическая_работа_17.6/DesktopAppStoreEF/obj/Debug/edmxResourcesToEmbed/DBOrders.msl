@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище DBOrdersModelContainer" CdmEntityContainer="DBOrdersEntities1">
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="DBOrdersModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Код_товара" ColumnName="Код_товара" />
+          <ScalarProperty Name="Наименование_товара" ColumnName="Наименование_товара" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

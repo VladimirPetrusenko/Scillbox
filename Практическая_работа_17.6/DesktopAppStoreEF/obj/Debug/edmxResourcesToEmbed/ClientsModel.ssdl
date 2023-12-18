@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище DBClientsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "DBClients.dbo.Clients" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Фамилия" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Отчество" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Номер_телефона" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Хранилище DBClientsModelContainer">
+    <EntitySet Name="Clients" EntityType="Self.Clients" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Clients].[ID] AS [ID], 
+    [Clients].[Фамилия] AS [Фамилия], 
+    [Clients].[Имя] AS [Имя], 
+    [Clients].[Отчество] AS [Отчество], 
+    [Clients].[Номер_телефона] AS [Номер_телефона], 
+    [Clients].[Email] AS [Email]
+    FROM [dbo].[Clients] AS [Clients]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

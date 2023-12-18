@@ -1,0 +1,67 @@
+using System.Windows;
+
+namespace DesktopAppStoreEF
+{
+    /// <summary>
+    /// Логика взаимодействия для DesktopStoreClients.xaml
+    /// </summary>
+    public partial class DesktopStoreClients : Window
+    {
+        DBClientsEntities1 context;
+        public DesktopStoreClients()
+        {
+            InitializeComponent();
+            context = new DBClientsEntities1();
+            context.LoadClients(viewClients);
+        }
+
+        //Пункт контекстного меню "Добавить"
+        private void MenuItemAddClick(object sender, RoutedEventArgs e)
+        {
+            context.AddClient();
+        }
+
+        //Пункт контекстного меню "Удалить"
+        private void MenuItemDeleteClick(object sender, RoutedEventArgs e)
+        {
+            //row = (DataRowView)viewClients.SelectedItem; - не получится так сделать, потому что 
+            //viewClients.SelectedItem по какой-то причине сразу становится объектом класса Clients
+            //и приведение к типу DataRowView невозможно 
+            //viewClients.ItemsSource = context.Clients.Local.ToBindingList<Clients>(); - в этом причина
+            Clients client = (DesktopAppStoreEF.Clients)(viewClients.SelectedItem);
+            context.DeleteClient(client);
+        }
+
+        private void MenuItemEditClick(object sender, RoutedEventArgs e)
+        {
+            Clients client = (DesktopAppStoreEF.Clients)(viewClients.SelectedItem);
+            context.EditClient(client);
+            //никаких дополнительных действий не нужно
+            //уже предусмотрена возможность обновления контекста автоматически при изменении данных в таблице datagrid
+            //при этом судя по всему объект f является ссылающимся на соответствующую строку datagrid, 
+            //а не просто отдельным объектом с теми же данными, поэтому при изменении этого объекта и происходит сразу
+            //изменение и самой datagrid...
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Clients client = (DesktopAppStoreEF.Clients)(viewClients.SelectedItem);
+            context.LoadClientOrders(client);
+        }
+    }
+}
+
+//////////////////
+
+https://blog.sqlauthority.com/2018/01/24/sql-server-identity-jumping-1000-identity_cache/
+
+https://utyatnishna.ru/info/21265/identity-column-value-suddenly-jumps-to-1001-in-sql-server
+
+Проблема с присвоением ID не по порядку, проблема мною не понята и не изучена, решена случайным образом, каким именно не помню.
+
+//////////////////
+
+https://translated.turbopages.org/proxy_u/en-ru.ru.e30917c4-657f0959-636b86d9-74722d776562/https/stackoverflow.com/questions/8676421/definingquery-and-no-deletefunction-element-exists-in-the-modificationfunctio
+
+проблема "Определяющий запрос, и в элементе <ModificationFunctionMapping> нет элемента <DeleteFunction> для поддержки текущей операции" возникла при работе с БД (добавление, удаление, обновление) при работе 
+с Orders. проблема исчезла как только в БД MSSQLServer задал первичный ключ у ID. Но полчему таких же действий не потребовалось у Clients...
