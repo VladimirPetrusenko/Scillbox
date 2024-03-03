@@ -1,0 +1,15 @@
+﻿<Window x:Class="AnimalRepository.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimalRepository"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Единый реестр животных" HorizontalAlignment="Left" Margin="245,50,0,0" VerticalAlignment="Top" Width="302" Height="50" FontSize="25"/>
+        <Label Content="Информационная система ведения реестра животных &#xD;&#xA;                        с классификацией по типам.  " 
+               Margin="135,100,124.6,0" Height="108" FontSize="20" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Left"/>
+        <Button Content="Войти в систему" HorizontalAlignment="Left" Margin="235,245,0,0" VerticalAlignment="Top" Width="336" Height="62" Click="Button_Click_1" FontSize="20"/>
+    </Grid>
+</Window>
