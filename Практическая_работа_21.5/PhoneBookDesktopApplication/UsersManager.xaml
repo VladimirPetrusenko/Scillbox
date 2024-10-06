@@ -1,0 +1,41 @@
+﻿<Window x:Class="PhoneBookDesktopApplication.UsersManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhoneBookDesktopApplication"
+        mc:Ignorable="d"
+        Title="UsersManager" Height="450" Width="800">
+    <Grid>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="70*"/>
+        <ColumnDefinition Width="30*"/>
+    </Grid.ColumnDefinitions>
+    <DataGrid x:Name="viewUsers"
+                  IsSynchronizedWithCurrentItem="True"
+                  SelectionMode="Single"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding}"
+                  IsReadOnly="False">
+        <!--CurrentCellChanged="GridViewCurrentCellChanged"-->
+        <!--CellEditEnding="GridViewCellEditEnding"-->
+        <DataGrid.Columns>
+            <DataGridTextColumn x:Name="id"
+                                    Binding="{Binding Id}"
+                                    Header="Id"
+                                    IsReadOnly="True"/>
+
+            <DataGridTextColumn x:Name="username"
+                                    Binding="{Binding Username}"
+                                    Header="Имя пользователя"/>
+
+            <DataGridTextColumn x:Name="role"
+                                    Binding="{Binding Role}"
+                                    Header="Роль"/>
+        </DataGrid.Columns>
+    </DataGrid>
+    <Button Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top" Width="200" Height="30" x:Name="Add_Button" Click="Add_Button_Click"/>
+    <Button Content="Удалить" Grid.Column="1" HorizontalAlignment="Left" Margin="20,80,0,0" VerticalAlignment="Top" Width="200" Height="30" x:Name="Delete_Button" Click="Delete_Button_Click"/>
+    <!--<Button Content="Сделанные заказы" Grid.Column="1" HorizontalAlignment="Left" Margin="20,24,0,0" VerticalAlignment="Top" Width="200" Height="30" Click="Button_Click"/>-->
+    </Grid>
+</Window>

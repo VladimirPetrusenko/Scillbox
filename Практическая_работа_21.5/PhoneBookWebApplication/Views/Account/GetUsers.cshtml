@@ -1,0 +1,32 @@
+﻿@using PhoneBookWebApplication.AuthIdentityPhoneBookWebApplication;
+@model IEnumerable<User>
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h1>Users</h1>
+
+<a class="navbar-brand" href="/Account/Register">Добавить нового пользователя</a>
+
+<h2>Список пользователей</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Имя</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.UserName</td>
+                <td>
+                    <!--<a asp-action="DeleteUser" asp-controller="Account" asp-route-userId="user.Id">Удалить</a> - asp-route-userId не работает-->
+                    <a asp-action="DeleteUser" asp-controller="Account" asp-route-id="@user.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
