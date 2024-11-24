@@ -1,0 +1,71 @@
+﻿@model SkillProfiWebApplication.Request
+@{
+    ViewData["Title"] = "RequestDetails";
+}
+
+<h1>Детали заявки</h1>
+
+@{
+    // Создаем список статусов прямо в представлении
+    List<string> statuses = new List<string>
+{
+        "Received",
+        "InProgress",
+        "Completed",
+        "Declined",
+        "Canceled"
+    };
+}
+
+<form asp-action="ChangeRequestStatus" method="post">
+    <div>
+        <label for="Id">Id</label>
+        <label for="Id">"@Model.Id"</label>
+        <input type="hidden" name="id" value="@Model.Id" />
+    </div>
+
+    <div>
+        <label for="GuestName">GuestName</label>
+        <label for="GuestName">"@Model.GuestName"</label>
+        <input type="hidden" name="GuestName" value="@Model.GuestName" />
+    </div>
+
+    <div>
+        <label for="Email">Email</label>
+        <label for="Email">"@Model.Email"</label>
+        <input type="hidden" name="Email" value="@Model.Email" />
+    </div>
+
+    <div>
+        <label for="RequestText">Phone</label>
+        <label for="RequestText">"@Model.RequestText"</label>
+        <input type="hidden" name="RequestText" value="@Model.RequestText" />
+    </div>
+
+    <div>
+        <label for="startDate">Status</label>
+        <label for="startDate">"@Model.Status"</label>
+        <select id="Status" name="Status">
+            @foreach (var status in statuses)
+            {
+                if (status == @Model.Status.ToString())
+                {
+                    <option value="@status" selected>@status</option>
+                }
+                else
+                {
+                    <option value="@status">@status</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div>
+        <label for="CreatedAt">CreatedAt</label>
+        <label for="CreatedAt">"@Model.CreatedAt"</label>
+        <input type="hidden" name="CreatedAt" value="@Model.CreatedAt" />
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Сохранить</button> | <a asp-action="Requests">Назад</a>
+    </div>
+</form>

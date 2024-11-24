@@ -1,0 +1,16 @@
+﻿@model SkillProfiWebApplication.Data.Post
+@{
+    ViewData["Title"] = "PostDetails";
+}
+
+<link rel="stylesheet" href="~/css/Posts.css" />
+
+<h1>Пост</h1>
+<div class="card-container">
+    <div>
+        <p class="post-date">@Model.DateOfPublication</p>
+        <p class="post-title">@Model.PostTitle</p>
+        <img class="post-image" src="~/images/@Model.PostImage" alt="@Model.PostTitle" />
+        <p class="post-details">@Model.PostFullContent</p>
+    </div>
+</div>

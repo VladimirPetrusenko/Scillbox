@@ -1,0 +1,38 @@
+﻿@model SkillProfiWebApplication.ViewModels.ContactsPageModel
+@{
+    ViewData["Title"] = "EditContacts";
+}
+
+<link rel="stylesheet" href="~/css/Contacts.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+<div class="form-container">
+    <form asp-action="EditContacts">
+        <div class="info-container">
+            <div class="edit-contacts-form">
+                <label class="control-label">Адрес</label>
+                <input class="edit-contacts-form" asp-for="@Model.Address" required>
+            </div>
+            <div class="edit-contacts-form">
+                <label class="control-label">Телефон</label>
+                <input class="edit-contacts-form" asp-for="@Model.PhoneNumber" required>
+            </div>
+            <div class="edit-contacts-form">
+                <label class="control-label">Факс</label>
+                <input class="edit-contacts-form" asp-for="@Model.Fax" required>
+            </div>
+            <div class="edit-contacts-form">
+                <label class="control-label">Email</label>
+                <input class="edit-contacts-form" asp-for="@Model.Email" required>
+            </div>
+        </div>
+        <div class="contacts-edit-button">
+            <input type="submit" value="Сохранить" class="btn btn-primary" /> | <a asp-action="Contacts">Назад</a>
+        </div>
+</form>
+    <div class="map-container">
+        <h2>Местоположение на карте</h2>
+        <img class="map-image" src="~/images/@Model.ContactsImage" alt="@Model.ContactsImage" />
+    </div>
+</div>
+

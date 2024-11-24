@@ -1,0 +1,37 @@
+﻿@model SkillProfiWebApplication.Data.Service
+
+@{
+    ViewData["Title"] = "DeleteService";
+}
+
+<h1>Удаление услуги</h1>
+
+<h3>Вы уверены что хотите удалить данную услугу?</h3>
+<form asp-action="DeleteService">
+    <div>
+        <dl class="row">
+            <dt class="col-sm-2">
+                Id услуги
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-2">
+                Название услуги
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ServiceTitle)
+            </dd>
+            <dt class="col-sm-2">
+                Описание услуги
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ServiceDescription)
+            </dd>
+        </dl>
+
+        <div class="delete-service-button">
+            <input type="submit" value="Удалить" class="btn btn-danger" /> | <a asp-action="Services">Назад</a>
+        </div>
+    </div>
+</form>

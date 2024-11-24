@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SkillProfiWebApplication.Data.Post>
+
+@{
+    ViewData["Title"] = "Posts";
+}
+    
+<link rel="stylesheet" href="~/css/Posts.css" />
+
+<h1>Блог</h1>
+<div class="card-container">
+    @foreach (var post in Model)
+    {
+        <div class="card">
+            <div class="date">
+                <h2>@post.DateOfPublication</h2>
+            </div>
+            <img class="card-image" src="~/images/@post.PostImage" alt="@post.PostTitle" />
+            <div class="card-title-container">
+                <a class="card-title" asp-controller="Home" asp-action="PostDetails" asp-route-id="@post.Id">@post.PostTitle</a>
+            </div>
+            <div class="fragment">
+                <h2>@post.PostFragment</h2>
+            </div>
+        </div>
+    }
+</div>
+

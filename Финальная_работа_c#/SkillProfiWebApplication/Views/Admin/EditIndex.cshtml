@@ -1,0 +1,38 @@
+﻿@model SkillProfiWebApplication.ViewModels.IndexPageModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="~/css/Index.css" />
+<form asp-action="EditIndex">
+    <div class="image-container">
+        <img src="~/images/IndexImage3.jpg" alt="Описание изображения" />
+        <div class="overlay1">
+            <input asp-for="@Model.MainPageCaption" class="form-control" />
+        </div>
+        <div class="overlay2">
+            <input asp-for="@Model.RequestLabel" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-container">
+        <input asp-for="@Model.RequestFormsLabel" class="form-control" />
+        <form>
+            <div class="form-field">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" disabled>
+            </div>
+            <div class="form-field">
+                <label for="email">Имейл:</label>
+                <input type="email" id="email" disabled>
+            </div>
+            <div class="form-field">
+                <label for="message">Сообщение:</label>
+                <textarea id="message" rows="3" disabled></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" /> | <a asp-action="Index">Назад</a>
+            </div>
+        </form>
+    </div>
+</form>

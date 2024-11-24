@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SkillProfiWebApplication.Data.Service>
+
+@{
+    ViewData["Title"] = "Services";
+}
+
+<link rel="stylesheet" href="~/css/Services.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+<h2>Услуги</h2>
+<a class="add-service" asp-controller="Admin" asp-action="AddService" method="get">Добавить услугу</a>
+<div class="card-container">
+    @foreach (var service in Model)
+    {
+    <div class="mainservice">
+        <div class="container mt-3">
+            <details>
+                <summary>@service.ServiceTitle</summary>
+                <div class="collapse-content">
+                    @service.ServiceDescription
+                </div>
+            </details>
+        </div>
+        <div class="service-actions">
+            <a asp-controller="Admin" asp-action="EditService" asp-route-id="@service.Id"><i class="fas fa-pencil-alt" title="Редактировать"></i></a>
+            <a asp-controller="Admin" asp-action="DeleteService" asp-route-id="@service.Id"><i class="fas fa-trash" title="Удалить"></i></a>
+        </div>
+    </div>
+    }
+</div>

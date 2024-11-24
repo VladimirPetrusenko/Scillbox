@@ -1,0 +1,29 @@
+﻿@model List<SkillProfiWebApplication.SocialNetwork>
+
+@{
+    ViewData["Title"] = "EditSocialNetwork";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<h1>Редактирование ссылок</h1>
+
+<form asp-action="EditSocialNetworks" method="post">
+    @for(int i = 0; i < @Model.Count(); i++)
+    {
+        <div>
+            <label for="Name"><i class="@Model[i].Name"></i></label>
+            <input type="hidden" name="Name - @i" asp-for="@Model[i].Name" value="@Model[i].Name" />
+            @if(Model[i].Link == "#")
+            {
+                <input name="Link - @i" asp-for="@Model[i].Link" value="" />
+            }
+            else
+            {
+                <input name="Link - @i" asp-for="@Model[i].Link" value="@Model[i].Link" />
+            }
+        </div>
+    }
+<div>
+    <input type="submit" value="Сохранить" class="btn btn-primary"> | <a asp-action="Contacts">Назад</a>
+</div>
+</form>

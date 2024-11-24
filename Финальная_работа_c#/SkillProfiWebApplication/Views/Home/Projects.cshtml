@@ -1,0 +1,22 @@
+﻿@model IEnumerable<SkillProfiWebApplication.Data.Project>
+
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<link rel="stylesheet" href="~/css/Projects.css" />
+
+<h2>Проекты</h2>
+<div class="card-container">
+    @foreach (var project in Model)
+    {
+        <div class="card">
+            <img class="card-image" src="~/images/@project.ProjectImage" alt="@project.ProjectTitle" />
+            <div class="card-title-container">
+                <a class="card-title" asp-controller="Home" asp-action="ProjectDetails" asp-route-id="@project.Id">@project.ProjectTitle</a>
+            </div>
+        </div>
+    }
+</div>
+
+

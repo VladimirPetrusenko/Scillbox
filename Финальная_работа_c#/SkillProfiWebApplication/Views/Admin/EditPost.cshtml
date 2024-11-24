@@ -1,0 +1,57 @@
+﻿@model SkillProfiWebApplication.Data.Post
+
+@{
+    ViewData["Title"] = "EditPost";
+}
+
+<link rel="stylesheet" href="~/css/Posts.css" />
+<h1>Редактирование поста</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditPost">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="post-edit-title-container">
+                <label asp-for="PostTitle" class="control-label">Название поста</label>
+                <input asp-for="PostTitle" class="form-control" />
+                <span asp-validation-for="PostTitle" class="text-danger"></span>
+            </div>
+            <div class="post-edit-img-container">
+                <label asp-for="PostImage" class="control-label">Изображение поста</label>
+                @if (Model.PostImage != null && Model.PostImage.Length > 0) // Проверка на существующее изображение
+                {
+                    <img src="~/images/@Model.PostImage" alt="Текущее изображение" style="max-width: 150px; max-height: 150px;" />
+                    <br />
+                    <small>Текущее изображение. Чтобы изменить его, загрузите новое.</small>
+                }
+                <input type="file" asp-for="PostImage" class="form-control" />
+                <span asp-validation-for="PostImage" class="text-danger"></span>
+            </div>
+            <div class="post-edit-fragment-container">
+                <label asp-for="PostFragment" class="control-label">Видимый фрагмент поста</label>
+                <textarea asp-for="PostFragment" rows="4" class="form-control"></textarea>
+                <span asp-validation-for="PostFragment" class="text-danger"></span>
+            </div>
+            <div class="post-edit-fullcontent-container">
+                <label asp-for="PostFullContent" class="control-label">Полное содержание поста</label>
+                <textarea asp-for="PostFullContent" rows="8" class="form-control"></textarea>
+                <span asp-validation-for="PostFullContent" class="text-danger"></span>
+            </div>
+            <div class="post-edit-datepublic-container">
+                <label asp-for="DateOfPublication" class="control-label">Дата публикации</label>
+                <label asp-for="DateOfPublication" class="form-control">@Model.DateOfPublication</label>
+                <span asp-validation-for="DateOfPublication" class="text-danger"></span>
+            </div>
+            <div class="post-button">
+                <input type="submit" value="Сохранить" class="btn btn-primary" /> | <a asp-action="Posts">Назад</a> 
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

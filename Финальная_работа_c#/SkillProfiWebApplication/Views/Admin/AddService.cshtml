@@ -1,0 +1,33 @@
+﻿@model SkillProfiWebApplication.Data.Service
+
+@{
+    ViewData["Title"] = "AddService";
+}
+
+<link rel="stylesheet" href="~/css/Services.css" />
+
+<h1>Добавление услуги</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddService">
+            <div class="service-edit-title-container">
+                <label asp-for="ServiceTitle" class="control-label">Название услуги</label>
+                <input asp-for="ServiceTitle" class="form-control" />
+                <span asp-validation-for="ServiceTitle" class="text-danger"></span>
+            </div>
+            <div class="service-edit-description-container">
+                <label asp-for="ServiceDescription" class="control-label">Описание услуги</label>
+                <textarea asp-for="ServiceDescription" rows="7" class="form-control"></textarea>
+                <span asp-validation-for="ServiceDescription" class="text-danger"></span>
+            </div>
+            <div class="service-button">
+                <input type="submit" value="Добавить" class="btn btn-primary" /> |
+                <a asp-action="Services">Назад</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

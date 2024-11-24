@@ -1,0 +1,42 @@
+﻿@model SkillProfiWebApplication.Data.Project
+
+@{
+    ViewData["Title"] = "DeleteProject";
+}
+
+<h1>Удаление проекта</h1>
+
+<h3>Вы уверены что хотите удалить данный проект?</h3>
+<form asp-action="DeleteProject">
+    <div>
+        <dl class="row">
+            <dt class="col-sm-2">
+                Id проекта
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-2">
+                Название проекта
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ProjectTitle)
+            </dd>
+            <dt class="col-sm-2">
+                Картинка проекта
+            </dt>
+            <dd class="col-sm-10">
+                <img src="~/images/@Model.ProjectImage" style="max-width: 150px; max-height: 150px;" />
+            </dd>
+            <dt class="col-sm-2">
+                Описание проекта
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ProjectDetails)
+            </dd>
+        </dl>
+        <div class="delete-project-button">
+            <input type="submit" value="Удалить" class="btn btn-danger" /> | <a asp-action="Projects">Назад</a>
+        </div>
+    </div>
+</form>

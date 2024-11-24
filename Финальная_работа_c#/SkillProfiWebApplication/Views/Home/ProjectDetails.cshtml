@@ -1,0 +1,16 @@
+﻿@model SkillProfiWebApplication.Data.Project
+
+@{
+    ViewData["Title"] = "ProjectDetails";
+}
+<link rel="stylesheet" href="~/css/Projects.css" />
+
+<h2>Проект</h2>
+<div class="card-container">   
+    <div>
+        <p class="project-title">@Model.ProjectTitle</p>
+        <img class="card-image" src="~/images/@Model.ProjectImage" alt="@Model.ProjectTitle" />
+        <p class="project-details">@Model.ProjectDetails</p>
+    </div>  
+</div>
+

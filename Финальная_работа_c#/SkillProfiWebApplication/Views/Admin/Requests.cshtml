@@ -1,0 +1,69 @@
+﻿@model SkillProfiWebApplication.ViewModels.RequestsPageModel
+@{
+    ViewData["Title"] = "RequestsPage";
+}
+
+<link rel="stylesheet" href="~/css/Requests.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+<h1>Заявки</h1>
+
+<form asp-action="SortRequests" method="post" class="filter-form">
+    <div class="date-buttons">
+        <button type="submit" name="DateRange" value="today">Сегодня</button>
+        <button type="submit" name="DateRange" value="yesterday">Вчера</button>
+        <button type="submit" name="DateRange" value="week">Неделя</button>
+        <button type="submit" name="DateRange" value="month">Месяц</button>
+    </div>
+
+    <div class="date-buttons">
+        <label for="startDate">От</label>
+        <input type="date" id="startDate" name="StartDate" value="@Model.StartDate" />
+
+        <label for="endDate">До:</label>
+        <input type="date" id="endDate" name="EndDate" value="@Model.EndDate" />
+    </div>
+
+    <div class="date-buttons">
+        <label for="requestStatus">Статус заявки:</label>
+        <select id="requestStatus" name="RequestStatus">
+            <option value="Все">Все</option> <!-- Значение "" будет означать выбор всех статусов -->
+            @foreach (var status in Model.Statuses)
+            {
+                <option value="@status">@status</option>
+            }
+        </select>
+    </div>
+    <button type="submit">Применить фильтр</button>
+</form>
+
+<form asp-action="EditRequest" method="post" class="requests-table-form">
+    <!-- Таблица заявок -->
+    <table class="requests-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Email</th>
+                <th>Текст заявки</th>
+                <th>Статус</th>
+                <th>Дата создания</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var request in Model.Requests)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="RequestDetails" asp-route-id="@request.Id">@request.Id</a>
+                    </td>
+                    <td>@request.GuestName</td>
+                    <td>@request.Email</td>
+                    <td>@request.RequestText</td>
+                    <td>@request.Status.ToString()</td>
+                    <td>@request.CreatedAt.ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication2</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="left-container">
+            <h1 class="hitech-text">= SP =</h1>
+            @if (User.IsInRole("admin"))
+            {
+                <h2 class="admin-text">Admin</h2>
+            }
+        </div>
+        <div class="right-container">
+            <nav class="navbar">
+                <ul>
+                    @if (!User.IsInRole("admin"))
+                    {
+                        <li><a href="/Home/">Главная</a></li>
+                        <li><a href="/Home/Projects/">Проекты</a></li>
+                        <li><a href="/Home/Services/">Услуги</a></li>
+                        <li><a href="/Home/Posts/">Блог</a></li>
+                        <li><a href="/Home/Contacts/">Контакты</a></li>
+                    }
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li><a href="/Admin/Index/">Главная</a></li>
+                        <li><a href="/Admin/Projects/">Проекты</a></li>
+                        <li><a href="/Admin/Services/">Услуги</a></li>
+                        <li><a href="/Admin/Posts/">Блог</a></li>
+                        <li><a href="/Admin/Contacts/">Контакты</a></li>
+                        <li><a href="/Admin/Requests/">Заявки</a></li>
+                    }
+                </ul>
+            </nav>
+            <div class="slogan">
+                <h2 class="slogan-text">"УСКОРЯЕМ ПРОГРЕСС"</h2>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="left-container1">
+            <h1 class="footer-text">&copy; 2024 - SkillProfy</h1>
+        </div>
+
+        @if (User.IsInRole("admin"))
+        {
+            <form class="right-container1" method="post" asp-controller="Admin" asp-action="Logout" id="logoutform" asp-antiforgery="true" style="display:inline">
+                <a class="nav-item" href="#" onclick="document.getElementById('logoutform').submit()">Выход</a>
+            </form>
+        }
+
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

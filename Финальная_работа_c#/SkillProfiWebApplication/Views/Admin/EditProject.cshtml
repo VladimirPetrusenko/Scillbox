@@ -1,0 +1,46 @@
+﻿@model SkillProfiWebApplication.Data.Project
+
+@{
+    ViewData["Title"] = "EditProject";
+}
+
+<link rel="stylesheet" href="~/css/Projects.css" />
+
+<h1>Редактирование проекта</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditProject">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="card-edit-title-container">
+                <label asp-for="ProjectTitle" class="control-label">Название проекта</label>
+                <input asp-for="ProjectTitle" class="form-control" />
+                <span asp-validation-for="ProjectTitle" class="text-danger"></span>
+            </div>
+            <div class="card-edit-img-container">
+                <label asp-for="ProjectImage" class="control-label">Изображение проекта</label>
+                @if (Model.ProjectImage != null && Model.ProjectImage.Length > 0) // Проверка на существующее изображение
+                {
+                    <img src="~/images/@Model.ProjectImage" alt="Текущее изображение" style="max-width: 150px; max-height: 150px;" />
+                    <br />
+                    <small>Текущее изображение. Чтобы изменить его, загрузите новое.</small>
+                }
+                <input type="file" asp-for="ProjectImage" class="form-control" />
+                <span asp-validation-for="ProjectImage" class="text-danger"></span>
+            </div>
+            <div class="card-edit-details-container">
+                <label asp-for="ProjectDetails" class="control-label">Описание проекта</label>
+                <textarea asp-for="ProjectDetails" rows="7" class="form-control"></textarea>
+                <span asp-validation-for="ProjectDetails" class="text-danger"></span>
+            </div>
+            <div class="project-button">
+                <input type="submit" value="Сохранить" class="btn btn-primary" /> | <a asp-action="Projects">Назад</a> 
+            </div>
+        </form>
+    </div>
+</div>
+

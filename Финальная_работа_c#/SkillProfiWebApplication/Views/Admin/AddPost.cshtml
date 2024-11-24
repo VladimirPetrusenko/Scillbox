@@ -1,0 +1,41 @@
+﻿@model SkillProfiWebApplication.Data.Post
+
+@{
+    ViewData["Title"] = "AddPost";
+}
+
+<link rel="stylesheet" href="~/css/Posts.css" />
+
+<h1>Добавление поста</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddPost">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="post-add-title-container">
+                <label asp-for="PostTitle" class="control-label">Название поста</label>
+                <input asp-for="PostTitle" class="form-control" />
+                <span asp-validation-for="PostTitle" class="text-danger"></span>
+            </div>
+            <div class="post-add-img-container">
+                <label asp-for="PostImage" class="control-label">Изображение поста</label>
+                <input type="file" asp-for="PostImage" class="form-control" />
+                <span asp-validation-for="PostImage" class="text-danger"></span>
+            </div>
+            <div class="post-add-fragment-container">
+                <label asp-for="PostFragment" class="control-label">Видимый фрагмент поста</label>
+                <textarea asp-for="PostFragment" rows="4" class="form-control"></textarea>
+                <span asp-validation-for="PostFragment" class="text-danger"></span>
+            </div>
+            <div class="post-add-fullcontent-container">
+                <label asp-for="PostFullContent" class="control-label">Полное содержание поста</label>
+                <textarea asp-for="PostFullContent" rows="8" class="form-control"></textarea>
+                <span asp-validation-for="PostFullContent" class="text-danger"></span>
+            </div>
+            <div class="post-button">
+                <input type="submit" value="Добавить" class="btn btn-primary" /> | <a asp-action="Posts">Назад</a> 
+            </div>
+        </form>
+    </div>
+</div>
+

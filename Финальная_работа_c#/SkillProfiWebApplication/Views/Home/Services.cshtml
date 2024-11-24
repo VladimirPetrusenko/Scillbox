@@ -1,0 +1,22 @@
+﻿
+@model IEnumerable<SkillProfiWebApplication.Data.Service>
+@{
+    ViewData["Title"] = "Services";
+}
+
+<link rel="stylesheet" href="~/css/Services.css" />
+
+<div class="card-container">
+    @foreach (var service in Model)
+    {
+    <div class="container mt-3">
+        <details>
+            <summary>@service.ServiceTitle</summary>
+            <div class="collapse-content">
+                @service.ServiceDescription
+            </div>
+        </details>
+    </div>
+    }
+</div>
+
